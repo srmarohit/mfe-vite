@@ -1,0 +1,280 @@
+/* Additional custom styles beyond Tailwind */
+
+/* Line clamp utilities */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth transitions */
+.transition-shadow {
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.transition-all-smooth {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Card hover effects */
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+/* Gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-bg-blue {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.gradient-bg-purple {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Loading animations */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s infinite;
+}
+
+/* Staggered animations for lists */
+.stagger-child > * {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.stagger-child > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stagger-child > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stagger-child > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stagger-child > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.stagger-child > *:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.stagger-child > *:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Text effects */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom borders */
+.border-gradient {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, #3b82f6, #8b5cf6) border-box;
+}
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+  .mobile-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .mobile-text-center {
+    text-align: center;
+  }
+
+  .mobile-stack > * {
+    margin-bottom: 1rem;
+  }
+
+  .mobile-stack > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-break {
+    page-break-before: always;
+  }
+}
+
+/* Accessibility improvements */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus styles for interactive elements */
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-ring:focus {
+  outline-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+/* Custom utilities for political news */
+.topic-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.topic-badge-policy {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: rgb(29, 78, 216);
+}
+
+.topic-badge-environment {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: rgb(22, 163, 74);
+}
+
+.topic-badge-healthcare {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: rgb(220, 38, 38);
+}
+
+.topic-badge-trade {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: rgb(217, 119, 6);
+}
+
+.topic-badge-education {
+  background-color: rgba(168, 85, 247, 0.1);
+  color: rgb(124, 58, 237);
+}
+
+.topic-badge-legal {
+  background-color: rgba(139, 92, 246, 0.1);
+  color: rgb(109, 40, 217);
+}
+
+.topic-badge-infrastructure {
+  background-color: rgba(6, 182, 212, 0.1);
+  color: rgb(8, 145, 178);
+}
+
+.topic-badge-technology {
+  background-color: rgba(139, 92, 246, 0.1);
+  color: rgb(124, 58, 237);
+}
+
+.topic-badge-economy {
+  background-color: rgba(20, 184, 166, 0.1);
+  color: rgb(13, 148, 136);
+}
