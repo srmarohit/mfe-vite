@@ -4,6 +4,7 @@ import LoadingGrid from "./components/LoadingGrid";
 import NoResults from "./components/NoResults";
 import { usePoliticalNews } from "./hooks/usePoliticalNews";
 import "./App.css";
+import { testSharedFn } from "@shared/utils";
 
 function App() {
   const {
@@ -29,6 +30,7 @@ function App() {
             <div className="mb-4 md:mb-0">
               <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
                 <span className="text-blue-600">Political</span> News Hub
+                <button onClick={testSharedFn}>Test Shared services</button>
               </h1>
               <p className="text-gray-600 mt-2">
                 Latest updates from government, policy, and political affairs
